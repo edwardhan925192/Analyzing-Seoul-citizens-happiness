@@ -32,7 +32,7 @@ def naverCrawling(encText,kind = 'news',display=100,start=1,sort='sim'):
         print("Error Code:" + rescode)
 
 
-
+#Parameter
 #display --> 100
 #number_of_page --> 페이지수 
 #sort --> 방법 
@@ -62,7 +62,7 @@ def to_korean(word):
   hangul = re.compile('[^ ㄱ-ㅣ가-힣]+')
   return "".join([ hangul.sub('', i) for i in word if i not in puch ])
 
-#dataframe 형태 
+#Input: list --> output: word counts dict 
 def korean_values_count(list_you_want):
   puch = string.punctuation
   df2 = pd.DataFrame({'title':list_you_want})
