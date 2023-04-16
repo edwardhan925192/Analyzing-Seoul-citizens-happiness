@@ -7,23 +7,23 @@
 # 드라이버로 사이트를 열거나 inputcontrols를 사용할떄 timesleep를 줘야함. 
 
 *********** thing you wanna import *********** 
-from selenium import webdriver			 #webdriver 불러오기
-from selenium.webdriver.chrome.options import Options 	 #option 
-from bs4 import BeautifulSoup			 #정적 crawling
-from selenium.webdriver.common.by import By 	 #inputcontrols 찾기
+from selenium import webdriver			
+from selenium.webdriver.chrome.options import Options
+from bs4 import BeautifulSoup			
+from selenium.webdriver.common.by import By 	
 from selenium.webdriver.support.ui import Select
 
 ************ options *************
 options = Options()
-options.add_argument("--headless") 		   #VM을 사용하기떄문에 display안함  
-options.add_argument("--no-sandbox") 	     	#Colab과 충돌
-options.add_argument('--disable-dev-shm-usage')   #Colab과 충돌
+options.add_argument("--headless") 		   
+options.add_argument("--no-sandbox") 	     	
+options.add_argument('--disable-dev-shm-usage')  
 options.add_argument('lang=ko_KR')		   
 
 ************ input controls ***************
 driver.get('url')
-driver.find_element(By.ID, 'input_controls_id') 	#input controls 찾기
-driver.execute_script(" ")			#script
+driver.find_element(By.ID, 'input_controls_id') 	
+driver.execute_script(" ")			
 
 search
 .send_keys('things_you_want_to_search')
