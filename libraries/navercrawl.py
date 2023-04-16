@@ -74,3 +74,4 @@ def korean_values_count(list_you_want):
   word_list_cnt.values
   word_list_cnt = sorted(word_list_cnt.items(), key = lambda x : x[1],reverse=True)
   return word_list_cnt
+
