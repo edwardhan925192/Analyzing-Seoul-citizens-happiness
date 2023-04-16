@@ -31,7 +31,6 @@ def naverCrawling(encText,kind = 'news',display=100,start=1,sort='sim'):
     else:
         print("Error Code:" + rescode)
 
-
 #Parameter
 #display --> 100
 #number_of_page --> 페이지수 
@@ -53,6 +52,26 @@ def news_list(display_num = 100, number_of_page = 2,sort_how = 'sim' ):
   
   df2['title'] = df2[['title']].applymap(to_korean)
   df2['desc'] = df2[['desc']].applymap(to_korean)
+  #df = df.apply(to_korean, axis = 0)
+  return(df2)
+
+def blog_list(display_num = 100,kind = 'blog', number_of_page = 2,sort_how = 'sim' ):
+  encText = input("검색어 : ")
+  title_list,link_list, desription_list, blogger_name_list, blogger_link_list,postdate_list =[],[],[],[],[],[]
+
+  for page in tqdm(range(1,number_of_page)):
+    datas = naverCrawling(encText,kind = 'blog',start = page,display = display_num,sort = sort_how)
+    for data in datas: 
+      title_list.append(data['title'])
+      link_list.append(data['link'])
+      desription_list.append(data['description'])
+      blogger_name_list.append(data['bloggername']) 
+      blogger_link_list.append(data['bloggerlink'])
+      postdate_list.append(data['postdate'])
+  df2 = pd.DataFrame({'title':title_list, 'link':link_list,'description':desription_list, 'bloggername':blogger_name_list,'blogger_link':blogger_link_list,'postdate_list':postdate_list}) 
+  
+  df2['title'] = df2[['title']].applymap(to_korean)
+  df2['description'] = df2[['description']].applymap(to_korean)
   #df = df.apply(to_korean, axis = 0)
   return(df2)
 
