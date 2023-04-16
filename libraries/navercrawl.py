@@ -51,8 +51,8 @@ def news_list(display_num = 100, number_of_page = 2,sort_how = 'sim' ):
       desription_list.append(data['description']) 
   df2 = pd.DataFrame({'title':title_list, 'orignal':originallink_list,'link':link_list, 'desc':desription_list}) 
   
-  df2['title'] = df[['title']].applymap(to_korean)
-  df2['desc'] = df[['desc']].applymap(to_korean)
+  df2['title'] = df2[['title']].applymap(to_korean)
+  df2['desc'] = df2[['desc']].applymap(to_korean)
   #df = df.apply(to_korean, axis = 0)
   return(df2)
 
