@@ -16,8 +16,8 @@ from selenium.webdriver.support.ui import Select
 ************ options *************
 options = Options()
 options.add_argument("--headless") 		   #VM을 사용하기떄문에 display안함  
-options.add_argument("--no-sandbox") 	   #Colab과 충돌
-options.add_argument('--disable-dev-shm-usage') #Colab과 충돌
+options.add_argument("--no-sandbox") 	     #Colab과 충돌
+options.add_argument('--disable-dev-shm-usage')   #Colab과 충돌
 options.add_argument('lang=ko_KR')		   #한국어표시 
 
 ************ input controls ***************
