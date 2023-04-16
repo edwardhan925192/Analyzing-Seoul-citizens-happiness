@@ -1,0 +1,31 @@
+np_matrix * scalar --> element wise
+np_matrix +,-,*,/ np_matrix --> element wise 
+
+np.reshape() 
+np.sum(axis = ) 
+
+np.concatenate((v1,v1), axis = 0) (same tensor dimension) (z,y,x)
+
+np.t = transpose 
+v1.dot(v_2) 
+
+(4,3) + (3,) 형태의 더하기가 가능
+
+np.where(condition) --> 좌표
+np.where(x>5, 0, x) = 5보다 크면 0, 작으면 그대로
+
+np.argsort(axis =  ) --> index
+np.argmax() --> index 
+np.argmin()  
+
+np.linspace(start,end,space)  
+np.hypot(x,y) --> vector magnitude 
+
+np.full(Shape, 원하는숫자, 원하는타입)
+
+np.transpose(0,2,1) --> 3D이상에서만 사용
+Original --> z = 0 , y = 1 , x = 2
+ 
+m1[...] == 전체 
+
+numpy 비교 연산자 & = and | = or 
