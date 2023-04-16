@@ -1,0 +1,34 @@
+************ Visualization ************
+1. style 설정
+2. figsize, axis 설정
+3. plot 형태 설정 
+4. parameter 설정
+5. plt.show()
+
+************ style ************
+sns.set_style() darkgrid, whitegrid, dark, white, ticks 
+
+************ figsize, axis ************
+plt.figure(figsize = (row_size, column_size))
+ax1 = fig.add_subplot(2,2,1)		#4개중 첫번쨰 plot 
+
+
+************ plots and parameters************
+sns.regplot(data = titanic, x = , y=, ax = )
+sns.histplot(data = , kde=)
+sns.heatmap(data =, annot = T/F , fmt= digits, cmap =, linewidth = , cbar = T/F  )
+sns.stripplot(data =, x= ,y= )
+sns.swarmplot(data =, x= ,y= )
+sns.barplot(data=, x=, y=, hue=, dodge=T/F)
+sns.boxplot(data=, x=, y=, hue=)
+sns.violinplot(data=, x=, y=, hue=)
+
+special plots
+sns.jointplot(data=, x=, y=, kind=)kind = reg, hex, kde, scatter 
+
+titanic_pair =  titanic[['age','pclass','fare']] 		
+g = sns.pairplot(titanic_pair)
+
+g = sns.FacetGrid(data=titanic,col='who',row='survived')
+g = g.map(plt.hist, 'age')				
+     

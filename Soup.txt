@@ -1,0 +1,26 @@
+********** soup crawling **********
+1. html code 받기 
+2. html code parse
+3. tag 서칭해서 원하는 정보 찾기 
+
+********** things to import **********
+from bs4 import BeautifulSoup
+import urllib.request
+
+********** html code 받기 **********
+html = urllib.request.urlopen(url) 	    #html code 받기 
+soup = BeautifulSoup(html,'html.parser')  #tag 형태로 분리시켜서 쓸수있게해줌
+ 
+********** soup 문법 **********	 
+soup.find_all(tag) -->  tag element의 리스트  
+soup.select('')    -->  tag element의 리스트 
+soup.text --> 안에있는 모든 내용 뽑기. 
+
+********** tag 구조 **********
+같은 이름으로 여러개의 tag가 있을 경우 nth-child(1)형식으로 나옴 ex) tr: nth_child(1) 
+tr까지 select하면 각각의 child가 저장됨 
+
+********** extra **********
+len(이용해서) tag안에 element가 있는지 확인하면 편함. 
+
+/robots.txt --> crawling 되는지 확인 
