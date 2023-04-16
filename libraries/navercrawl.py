@@ -81,7 +81,7 @@ def to_korean(word):
   hangul = re.compile('[^ ㄱ-ㅣ가-힣]+')
   return "".join([ hangul.sub('', i) for i in word if i not in puch ])
 
-#Input: list --> output: word counts dict 
+#Input: series --> output: word counts list 
 def korean_values_count(list_you_want):
   puch = string.punctuation
   df2 = pd.DataFrame({'title':list_you_want})
