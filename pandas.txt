@@ -50,7 +50,7 @@ pd.isnull() --> bool
 
 **************************** Merge *****************************************
 pd.merge(df_left, df_right,how = 'outer',on = 'subject_id') how = 'outer','inner','left','right' 
-df.concat(df1, df2, axis)
+pd.concat([df1, df2], axis = 1)
 
 ***************************** Outlier ******************************
 Q1 = df.quantile(0.25)
