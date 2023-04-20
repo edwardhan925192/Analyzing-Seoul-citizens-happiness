@@ -11,6 +11,9 @@ import string
 from tqdm import tqdm
 import re
 from collections import Counter
+
+%cd /content/drive/MyDrive/MyLibrary
+
 # 함수로 다시 표현.....................
 def naverCrawling(encText,kind = 'news',display=100,start=1,sort='sim'):
   client_id = 'ROzTdbEhF8zEFtqg2dbw'
