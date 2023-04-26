@@ -1,0 +1,18 @@
+1. Time series 형태로 만듬
+2. Set Index
+3. Visualize or do whatever you want  
+
+********** Date time col **********
+pd.to_datetime() --> Datetime object
+pd.date_range(start = , end = , periods = ,freq = ,tz = 'Asia/Seoul'  )
+.to_period(freq = ) 'D', 'M' ,'Y', 'A' 
+
+.dt.year,month,day
+********** time series functions **********
+df.sort_index()
+
+df.resample('D', 'M' ,'Y', 'A').mean(),sum()
+df.shift()
+Series.diff(periods = int )
+Series.rolling(window = int, on ).mean(),sum()
+Series.plot() line,scatter,bar,histogram,box,heatmap,violine

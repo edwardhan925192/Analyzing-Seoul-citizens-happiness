@@ -1,0 +1,127 @@
+***************************** Type ************************* 
+scatter            , x ,y ,s = ,alpha =                 #관계,corr()	  
+box                 , vert =  	                        #분포도,outliers
+hist                 ,bins =                                      #범위,
+bar, barh          stacked	                         #시계열?
+pie                   , autopct= '%1,1f%% ,  plt.axis('equal')  #합산된 데이터
+*************************Plots**************************
+fig, ax = plt.subplots(2,2) 
+
+plt.xticks(rotation = )
+ax2 = ax1.twinx() 
+*********************** Multiple plots ************************* 
+fig = plt.figure(figsize = (15,5))
+ax1 = fig.add_subplot(1,2,1)
+ax2 = fig.add_subplot(1,2,2) #figure 안을 matrix형태로 나눔. 
+
+sb.barplot(titanic, x = 'sex', y = 'pclass',ax = ax1) #나눈 matrix중 어디에 plot할지 
+sb.name_of_plot(df,x=col_name,y=col_name,ax1)
+
+plt.subplots_adjust(hspace= )
+
+for i in range(1,10):
+  exec(f'ax{i} = fig.add_subplot(3,3,i)') #fstring을 이용해서 변수를 만들고 싶을떄 
+
+------------------------------example ---------------------------------------
+fig = plt.figure(figsize = (10,5))
+for i in range(1,10):
+  ax= fig.add_subplot(3,3,i)
+  sb.barplot(titanic, x = titanic_col_list[i], y = 'survived',ax = ax)  
+
+plt.subplots_adjust(hspace= 0.5,wspace = 0.5)
+
+plt.show()
+************************* useful *************************
+plt.style.use('') default, classic(bar), ggplot(scatter)
+df.shift(1) --> 하나씩밀림 (증감률)
+set_ylim(start, end)
+axis로 지정하면 set_xlabel, set_ylim같은 형태를 써야함.
+
+******************* rotating xtcks for more than two *******************
+get_xtickslabels --> set_rotate  or plt.setp(xticklabels, rotate = 90) 
+for label in axes[0, 0].get_xticklabels():
+    label.set_rotation(45)
+
+or
+
+xticklabels = ax[0, 0].get_xticklabels()
+plt.setp(xticklabels, rotation=90)
+************************* 코렙한글 ************************************
+!sudo apt-get install -y fonts-nanum
+!sudo fc-cache -fv
+!rm ~/.cache/matplotlib -rf
+
+import matplotlib.pyplot as plt
+plt.rc('font', family='NanumBarunGothic')
+
+한번실행 --> runtime 재시작 --> 다시 실행. 
+******************** warning ************
+import warnings 
+warnings.filterwarnings('ignore')
+***************************csv****************************
+raw --> 경로카피 
+
+****************************API ****************************
+server에 있는 데이터를 볼수있게해주는 프로그램?
+****************** Seaborn ****************** 
+plt기능 공유 plt에 없는 plot형식 지원 
+sb.regplot( )
+sb.histplot (kde =,ax )
+sb.heatmap( )
+sb.violinplot
+
+sb.heatmap(, annot= , fmt = , cmap = , linewidth = , cbar = 
+sb.swarmplot()
+
+sb.jointplot(kind = '') kind = reg/hex/kde
+sb.pair()
+sb.stripplot()
+
+variable = sb.FacetGrid(titanic,col = 'who',row = 'survived') # grouped by 랑 비슷하게 생각하면됨.
+variable.map(plt.hist,'age') 
+
+df.pivottable  titanic.pivot_table(index = , columns = ,aggfunc = 'size')
+
+#회귀: 예측 현재의값으로 미래예측
+#회귀선이 있는 산점도 
+sb.set_style('darkgrid')
+sb.swarmplot()
+
+sb.style : darkgrid, whitegrid, dart, white, ticks
+
+sb.countplot()
+이해를 위한 
+
+********************* Maps ******************** 
+seoul_map2 = folium.Map(location = [37.55,126.98],tiles = 'Stamen Terrain', zoom_start = 12)
+seoul_map3 = folium.Map(location = [37.55,126.98],tiles = 'Stamen Toner' ,zoom_start = 12)
+
+
+marker 
+for name, lat, lng in zip(df.index,df['위도'],df['경도']):
+  folium.CircleMarker((lat,lng),radius = 10,color = 'brown',fill = True,fill_color = 'coral',fill_opacity = 0.7, popup = name).add_to(seoul_map)
+
+seoul_map.save('./seoul_colledge.html')
+
+[feature][properties][name]
+
+*******************Naver API ID *******************
+Client ID: ROzTdbEhF8zEFtqg2dbw
+Client Secret: gkqKs44TH4
+
+URL 
+https://openapi.naver.com/v1/search/news.xml
+
+
+reduce (lambda x,y: x+y,temp ) reduce -->  서로 더해서 리스트안의 리스트를 없애준다. 
+'',join(띄어진 단어열을 join 시켜줌. )
+
+import collections --? counter 
+
+공공기관: 0Gbs8xs3QgSPdCiTQLNHGq94viltI%2BXyDsibpnjdT0VadjNUYtXdbDR61HjYsR9SVaQkrZDdrZEY7wmwI5fIng%3D%3D
+decoding: 0Gbs8xs3QgSPdCiTQLNHGq94viltI+XyDsibpnjdT0VadjNUYtXdbDR61HjYsR9SVaQkrZDdrZEY7wmwI5fIng==
+********************** importing my libraries **********************
+import sys
+sys.path.append('/content/drive/MyDrive/YOUR_LIBRARY_PATH')
+Import and use your custom library:
+Now, you can import and use your custom library in your Colab notebook. For example, if your library file is named my_library.py, you can import it like this:
